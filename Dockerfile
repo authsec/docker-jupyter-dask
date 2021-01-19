@@ -9,5 +9,6 @@ RUN pip install dask_labextension openpyxl pyarrow; \
 # Dask Scheduler & Bokeh ports
 EXPOSE 8787
 EXPOSE 8786
+EXPOSE 8888
 
 ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]
