@@ -2,9 +2,9 @@
 FROM jupyter/scipy-notebook:latest
 
 # Install the Dask dashboard
-RUN pip install dask_labextension openpyxl pyarrow; \
-  jupyter labextension install -y --clean \
-  dask-labextension
+RUN conda update jupyterlab dask
+RUN pip install openpyxl pyarrow s3fs python-snappy dask-labextension;
+RUN jupyter lab build
 
 # Jupyter Lab interface
 EXPOSE 8888
