@@ -3,7 +3,7 @@ FROM jupyter/scipy-notebook:latest
 
 # Install the Dask dashboard
 RUN conda update jupyterlab dask
-RUN pip install openpyxl pyarrow s3fs python-snappy dask-labextension;
+RUN pip install openpyxl pyarrow s3fs python-snappy fastparquet dask-labextension;
 RUN jupyter lab build
 
 # Jupyter Lab interface
